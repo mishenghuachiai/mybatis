@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: mybatisplusdemo
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: properties
+        extension-configs:
+          -  data-id: mysql.properties
+             group: DEFAULT_GROUP
+             refresh: true
+          -  data-id: subian.properties
+             group: DEFAULT_GROUP
+             refresh: true
