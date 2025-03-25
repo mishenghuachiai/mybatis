@@ -13,3 +13,7 @@ spring:
           -  data-id: subian.properties
              group: DEFAULT_GROUP
              refresh: true
+
+server:
+  addr:
+    conf:  http://127.0.0.1:8888
