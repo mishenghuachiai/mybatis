@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import com.example.config.AgentSpecialConfig;
 import com.example.entity.Person;
 import com.example.service.ScService;
 import com.example.service.UserServiceProvider;
@@ -21,20 +22,14 @@ public class ScController {
     @Autowired
     ScService scService;
     @Autowired
-    private UserServiceProvider userServiceProvider;
-    @Autowired
-    private HelloController helloController;
+    private AgentSpecialConfig agentSpecialConfig;
     @RequestMapping("/home/{id}")
     public Person test(@PathVariable int id) {
-        System.out.println(helloController.test());
-//        System.out.println(httpUrl);
-//        System.out.println(name);
-//        /**
-//         * 引入使用OpenFegin
-//         */
-//        userServiceProvider.getUser(id);
+        System.out.println(httpUrl);
+        System.out.println(name);
+        agentSpecialConfig.checkAgentSpecialConfig("http_url");
         Person person = new Person();
-//        person.setName(name);
+        person.setName(name);
         return person;
     }
 }
