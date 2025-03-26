@@ -22,16 +22,19 @@ public class ScController {
     ScService scService;
     @Autowired
     private UserServiceProvider userServiceProvider;
+    @Autowired
+    private HelloController helloController;
     @RequestMapping("/home/{id}")
     public Person test(@PathVariable int id) {
-        System.out.println(httpUrl);
-        System.out.println(name);
-        /**
-         * 引入使用OpenFegin
-         */
-        userServiceProvider.getUser(id);
+        System.out.println(helloController.test());
+//        System.out.println(httpUrl);
+//        System.out.println(name);
+//        /**
+//         * 引入使用OpenFegin
+//         */
+//        userServiceProvider.getUser(id);
         Person person = new Person();
-        person.setName(name);
+//        person.setName(name);
         return person;
     }
 }
